@@ -1,0 +1,107 @@
+/* Ana container düzenlemesi */
+
+
+/* Yeni müşteri ekle butonu için düzenleme */
+
+#addCustomerButton {
+    position: absolute;
+    top: -50px;
+    right: 400px;
+    z-index: 10;
+}
+
+#addFilterButton {
+    position: absolute;
+    top: -50px;
+    right: 500px;
+    z-index: 10;
+}
+
+/* Mobil cihazlarda buton düzenlemesi */
+@media (max-width: 768px) {
+    .table-wrapper {
+        padding: 0 20px;
+        /* Mobilde tablo kenarlarını sarmak için padding */
+    }
+
+    /* Buton için stil düzenlemeleri */
+
+    /* Tabloyu mobil uyumlu hale getirme */
+    .p-datatable {
+        width: 100%;
+        /* Tabloyu genişlik olarak %100 yapıyoruz */
+        font-size: 14px;
+        /* Tabloyu mobilde okunabilir yapacak şekilde yazı boyutunu ayarladık */
+        overflow-x: auto;
+        /* Tabloyu yatay kaydırılabilir yapıyoruz */
+    }
+
+    #addCustomerButton {
+        position: absolute;
+        /* Sabit konumda kalacak */
+        top: -50px;
+        /* Mobilde biraz daha yukarıya yerleştir */
+        right: 20px;
+        /* Sağdan 20px mesafe bırak */
+        width: 28%;
+        /* Mobilde buton genişliğini %80 yap */
+        max-width: 250px;
+        /* Maksimum genişlik 250px */
+        font-size: 14px;
+        /* Yazı boyutunu küçültüyoruz */
+    }
+
+    #addFilterButton {
+        position: absolute;
+        /* Sabit konumda kalacak */
+        top: -50px;
+        /* Mobilde biraz daha yukarıya yerleştir */
+        right: 140px;
+        /* Sağdan 20px mesafe bırak */
+        width: 28%;
+        /* Mobilde buton genişliğini %80 yap */
+        max-width: 250px;
+        /* Maksimum genişlik 250px */
+        font-size: 14px;
+        /* Yazı boyutunu küçültüyoruz */
+    }
+
+
+    /* Tablo hücreleri için responsive düzenleme */
+    .p-datatable th,
+    .p-datatable td {
+        padding: 8px;
+        /* Hücre içi boşluğu ayarlıyoruz */
+    }
+
+    /* Tablo başlıkları küçük ekranlar için hizalama */
+    .p-datatable th {
+        text-align: center;
+    }
+}
+
+/* Çok küçük ekranlar için (telefonlar) */
+@media (max-width: 480px) {
+    .table-wrapper button {
+        top: 100px;
+        /* Butonu biraz daha aşağıya yerleştiriyoruz */
+        right: 20px;
+        /* Sağ tarafa hizalama */
+        width: 100%;
+        /* Ekran genişliğine göre butonun genişliğini ayarlıyoruz */
+        max-width: 220px;
+        /* Maksimum genişlik sınırı */
+    }
+
+    /* Tabloyu küçük ekranlar için daha da düzenleme */
+    .p-datatable {
+        font-size: 12px;
+        /* Tabloyu küçük ekranlarda okunabilir yapma */
+    }
+
+    /* Tablo başlıklarını ve hücreleri mobilde daha küçük yapalım */
+    .p-datatable th,
+    .p-datatable td {
+        font-size: 12px;
+    }
+}
