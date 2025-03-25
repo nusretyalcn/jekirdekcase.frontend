@@ -50,7 +50,6 @@ const CustomersTable = ({ customers, setCustomer, setVisible, deleteCustomer}) =
                       label="Sil"
                       icon="pi pi-trash"
                       onClick={() => {
-                        console.log("Silinecek müşteri:", rowData); // ✅ Debug için log ekle
                         deleteCustomer(rowData);
                       }}
                       className="p-button-danger p-button-sm"

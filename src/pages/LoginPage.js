@@ -4,7 +4,7 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import AuthService from "../services/AuthService";
 import { Card } from "primereact/card";
-
+import { ToastContainer, toast } from 'react-toastify';
 
 const LoginPage = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -14,6 +14,7 @@ const LoginPage = () => {
     AuthService.login(credentials).then((response) => {
       localStorage.setItem("token", response.data.token);
       navigate("/customers");
+      toast.success('Giriş başarılı!');
     }).catch(() => alert("Giriş başarısız!"));
   };
 

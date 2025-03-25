@@ -5,7 +5,6 @@ import { Button } from "primereact/button";
 const CustomerForm = ({ customer, setCustomer, saveCustomer, updateCustomer }) => {
     const handleSubmit = () => {
         if (customer?.id) {
-            console.log("Güncellenecek müşteri:", customer.id); // ✅ Debug için log ekle
             updateCustomer(customer); // Güncelleme işlemi
         } else {
             saveCustomer(customer); // Yeni ekleme işlemi

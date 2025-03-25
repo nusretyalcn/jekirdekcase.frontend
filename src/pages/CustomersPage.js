@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
+import { ToastContainer, toast } from 'react-toastify';
 import CustomerTable from "../components/CustomerTable";
 import CustomerForm from "../components/CustomerForm";
 import CustomerFilter from "../components/CustomerFilter"
@@ -34,6 +35,7 @@ const CustomersPage = () => {
     CustomerService.getCustomers(token)
       .then((res) => {
         setCustomers(res.data.data)
+        toast.success(res.data.message);
       })
       .catch(() => navigate("/login"));
   }, [navigate]);
@@ -52,8 +54,8 @@ const CustomersPage = () => {
     CustomerService.getFilteredCustomers(token, params) // `getFilteredCustomers` fonksiyonunu kullanarak filtreli verileri alıyoruz
       .then((res) => {
         setCustomers(res.data.data)
-        console.log("Filtered Customers:", res.data.data); // ✅ Debug için log ekle
         setVisibleFilter(false)
+        toast.success(res.data.message);
       }) 
    
       .catch(() => navigate("/login"));
@@ -64,9 +66,11 @@ const CustomersPage = () => {
       .then((res) => {
         window.location.reload(); // ✅ Sayfa yenilemeden state güncelle
         setVisible(false);
+        toast.success(res.data.message);
       })
       .catch((err) => {
         console.error("Hata oluştu:", err);
+        toast.error(err.response.data.message);
       });
   };
 
@@ -74,9 +78,11 @@ const CustomersPage = () => {
     CustomerService.deleteCustomer(deletedCustomer, token)
       .then((res) => {
         setCustomers(customers.filter((c) => c.id !== deletedCustomer.id));
+        toast.success(res.data.message);// ✅ Sayfa yenilemeden state güncelle
       })
       .catch((err) => {
         console.error("Hata oluştu:", err);
+        toast.error(err.response.data.message);
       });
   };
 
