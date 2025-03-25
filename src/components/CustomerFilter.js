@@ -5,7 +5,6 @@ import { Calendar } from "primereact/calendar";
 
 const CustomerFilter = ({ filters, setFilters, applyFilter }) => {
     const handleSubmit = () => {
-        console.log("Customerfilter filters:", filters); // ✅ Debug için log ekle
         applyFilter(filters); // Güncelleme işlemi
 
     };
@@ -17,7 +16,7 @@ const CustomerFilter = ({ filters, setFilters, applyFilter }) => {
                     value={filters.name}
                     onChange={(e) => {
                         const value = e.target.value;
-                        // Eğer değer boş değilse, filter objesine region ekle
+                        // Eğer değer boş değilse, filter objesine name ekle
                         setFilters((prevFilters) => ({
                             ...prevFilters,
                             ...(value ? { firstName: value } : {}), // value varsa region ekler, yoksa eklemez
