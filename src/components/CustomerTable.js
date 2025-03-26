@@ -29,7 +29,7 @@ const CustomersTable = ({ customers, setCustomer, setVisible, deleteCustomer}) =
               <Column
                 field="registrationDate"
                 header="Kayıt Tarihi"
-                style={{ width: "13 0px" }}
+                style={{ width: "13px" }}
                 body={(rowData) => new Date(rowData.registrationDate).toLocaleDateString("tr-TR")}
               />
       
