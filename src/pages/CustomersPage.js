@@ -96,69 +96,74 @@ const CustomersPage = () => {
   };
 
   return (
-    <div className="container" style={{ position: "relative" }}>
-      {/* Yeni Müşteri Ekleme Butonu */}
-      
-      <Button
-        label="Ekle"
-        id="addCustomerButton"
-        icon="pi pi-plus"
-        onClick={() => {
-          setCustomer({ firstName: "", lastName: "", email: "", region: "", registrationDate: "" });
-          setVisible(true);
-        }}
-        className="p-button-success"
-
-      />
-            {/* Filtreleme Butonu */}
-      <Button
-        label="Filtrele"
-        id="addFilterButton"
-        icon="pi pi-filter"
-        onClick={() => {
+    <div>
+      {/* Butonları içeren container */}
+      <div className="buttonContainer" style={{ position: "fixed" }}>
+        {/* Yeni Müşteri Ekleme Butonu */}
+        <Button
+          label="Ekle"
+          id="addCustomerButton"
+          icon="pi pi-plus"
+          onClick={() => {
+            setCustomer({ firstName: "", lastName: "", email: "", region: "", registrationDate: "" });
+            setVisible(true);
+          }}
+          className="p-button-success"
+        />
+  
+        {/* Filtreleme Butonu */}
+        <Button
+          label="Filtrele"
+          id="addFilterButton"
+          icon="pi pi-filter"
+          onClick={() => {
             setFilters({ firstName: "", lastName: "", email: "", region: "", registrationDate: "" });
             setVisibleFilter(true);
           }}
-        className="p-button-info"
+          className="p-button-info"
+        />
+      </div>
   
-      />
-
       {/* Müşteri Tablosu */}
-      <CustomerTable
-        customers={customers}
-        setCustomer={setCustomer}
-        setVisible={setVisible}
-        deleteCustomer={deleteCustomer}
-        updateCustomer={updateCustomer} // ✅ `updateCustomer` fonksiyonunu ekledik
-      />
-
-      {/* Müşteri Bilgi Formu (Dialog) */}
-      <Dialog
-        header="Müşteri Bilgileri"
-        visible={visible}
-        onHide={() => setVisible(false)} // Dialog kapanınca sadece visible'ı false yapıyoruz
-        className="dialog"
-      >
-        <CustomerForm
-          customer={customer}
+      <div className="tableContainer">
+        <CustomerTable
+          customers={customers}
           setCustomer={setCustomer}
-          saveCustomer={customer?.id ? updateCustomer : saveCustomer}
-          updateCustomer={updateCustomer}
+          setVisible={setVisible}
+          deleteCustomer={deleteCustomer}
+          updateCustomer={updateCustomer} // ✅ `updateCustomer` fonksiyonunu ekledik
         />
-      </Dialog>
-
-      <Dialog
-        header="Müşteri Filtreleme"
-        visible={visibleFilter}
-        onHide={() => setVisibleFilter(false)} // Dialog kapanınca sadece visible'ı false yapıyoruz
-        className="dialog"
-      >
-        <CustomerFilter
-          filters={filters}
-          setFilters={setFilters}
-          applyFilter={applyFilter} // Apply filter fonksiyonunu burada kullanıyoruz
-        />
-      </Dialog>
+      </div>
+  
+      {/* Müşteri Bilgi Formu (Dialog) */}
+      <div className="container" style={{ position: "relative" }}>
+        <Dialog
+          header="Müşteri Bilgileri"
+          visible={visible}
+          onHide={() => setVisible(false)} // Dialog kapanınca sadece visible'ı false yapıyoruz
+          className="dialog"
+        >
+          <CustomerForm
+            customer={customer}
+            setCustomer={setCustomer}
+            saveCustomer={customer?.id ? updateCustomer : saveCustomer}
+            updateCustomer={updateCustomer}
+          />
+        </Dialog>
+  
+        <Dialog
+          header="Müşteri Filtreleme"
+          visible={visibleFilter}
+          onHide={() => setVisibleFilter(false)} // Dialog kapanınca sadece visible'ı false yapıyoruz
+          className="dialog"
+        >
+          <CustomerFilter
+            filters={filters}
+            setFilters={setFilters}
+            applyFilter={applyFilter} // Apply filter fonksiyonunu burada kullanıyoruz
+          />
+        </Dialog>
+      </div>
     </div>
   );
 };

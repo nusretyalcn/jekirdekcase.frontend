@@ -5,12 +5,12 @@ import { Button } from "primereact/button";
 
 const CustomersTable = ({ customers, setCustomer, setVisible, deleteCustomer}) => {
     return (
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "200px" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "250px" }}>
           <div
             style={{
               width: "60%",
               minWidth: "400px",
-              maxHeight: "600px", // Yüksekliği sınırlıyoruz
+              maxHeight: "400px", // Yüksekliği sınırlıyoruz
               overflowY: "auto",  // Dikey scroll ekliyoruz
             }}
           >
