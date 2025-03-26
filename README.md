@@ -26,3 +26,15 @@ This project includes the **frontend part** of the **Customer Management System*
 1. Clone the repository:
    ```bash
    git clone https://github.com/nusretyalcn/jekirdekcase.frontend
+
+
+   
+<img width="278" alt="LoginPage" src="https://github.com/user-attachments/assets/6f6b0ad2-c400-4cf0-a115-1e182f3e8a4d" />
+<img width="679" alt="ListedScreen" src="https://github.com/user-attachments/assets/2f68a835-10e7-4fda-9611-10608ba3bbde" />
+<img width="637" alt="MüşteriEkle" src="https://github.com/user-attachments/assets/5f17a4c8-dfc3-41ad-bc04-4bb9f620a116" />
+
+<img width="665" alt="MüşteriFiltreleme" src="https://github.com/user-attachments/assets/f91294d4-712f-470f-ad58-4b6ecb11bed2" />
+<img width="700" alt="Tarih" src="https://github.com/user-attachments/assets/ed5c30b9-872e-4655-ada7-c8782a7b9ff9" />
+
+<img width="677" alt="Düzenle" src="https://github.com/user-attachments/assets/d48627b8-234f-45f3-960c-3af67172a92f" />
+
