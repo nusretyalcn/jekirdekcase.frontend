@@ -20,6 +20,22 @@ This project includes the **frontend part** of the **Customer Management System*
 - **Responsive Design**: The application adjusts to different screen sizes, ensuring usability on both desktop and mobile devices.
 - **Toast Notifications**: Displays success or error messages to inform users about the actions they perform.
 - **Dialogs**: Uses dialog boxes for customer information and customer filtering.
+
+
+## API URL Configuration
+
+In your frontend code, the backend API URLs for different services are defined in the respective service files.
+
+1. **AuthService.js**:  
+   The backend API URL for authentication-related requests is defined as:
+
+   ```javascript
+   const API_URL = "https://localhost:7256/api/Auth";
+2.In the `CustomerService.js` file, the backend API URL for customer-related requests is defined as:
+
+```javascript
+const API_URL = "https://localhost:7256/api/Customer";
+ ```
   
 ## Setup and Installation
 
