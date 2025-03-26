@@ -25,4 +25,4 @@ This project includes the **frontend part** of the **Customer Management System*
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/customer-management-system-frontend.git
+   git clone https://github.com/nusretyalcn/jekirdekcase.frontend
