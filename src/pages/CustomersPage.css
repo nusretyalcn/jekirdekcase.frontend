@@ -3,19 +3,39 @@
 
 /* Yeni müşteri ekle butonu için düzenleme */
 
-#addCustomerButton {
+/* #addCustomerButton {
     position: absolute;
     top: -50px;
     right: 400px;
     z-index: 10;
+} */
+.buttonContainer {
+    position: fixed;
+    top: 200px;
+    right: 20%; /* Sağdan %5 mesafe bırakıyoruz */
+    z-index: 10;
+    display: flex;
+    gap: 20px; /* Butonlar arasında mesafe */
+    flex-direction: row; /* Butonları yatayda hizalar */
+  }
+
+/* Küçük ekranlarda butonun boyutunu ve sağdaki boşluğu ayarla */
+@media (max-width: 768px) {
+    #addCustomerButton {
+        right: 10px; /* Sağdan sabit 10px boşluk bırak */
+        width: 40%; /* Küçük ekranlarda genişliği artır */
+    }
 }
 
-#addFilterButton {
-    position: absolute;
-    top: -50px;
-    right: 500px;
-    z-index: 10;
+@media (max-width: 480px) {
+    #addCustomerButton {
+        right: 10px; /* Daha küçük ekranlarda sağ boşluğu azalt */
+        width: 50%; /* Küçük ekranlarda genişliği artır */
+    }
 }
+
+
+
 
 /* Mobil cihazlarda buton düzenlemesi */
 @media (max-width: 768px) {
